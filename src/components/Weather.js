@@ -1,10 +1,7 @@
 import React, { useEffect } from 'react';
-import { getWeather } from '../apis/weather';
 
 const Weather = () => {
-  useEffect(() => {
-    getWeather(40, 44);
-  }, []);
+  useEffect(() => {}, []);
 
   return (
     <div>
