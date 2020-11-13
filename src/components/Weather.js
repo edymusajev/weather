@@ -2,11 +2,13 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { fetchWeather } from '../actions';
 
-const Weather = ({ fetchWeather }) => {
+const Weather = ({ fetchWeather, weather }) => {
   useEffect(() => {
-    fetchWeather(24, 33);
+    fetchWeather();
   }, [fetchWeather]);
-
+  // useEffect(() => {
+  //   console.log(weather);
+  // });
   return (
     <div>
       <h4>Weather</h4>
@@ -14,4 +16,8 @@ const Weather = ({ fetchWeather }) => {
   );
 };
 
-export default connect(null, fetchWeather)(Weather);
+const mapStateToProps = (state) => {
+  return { weather: state.weather };
+};
+
+export default connect(mapStateToProps, { fetchWeather })(Weather);
