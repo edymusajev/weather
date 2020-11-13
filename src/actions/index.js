@@ -1,8 +1,8 @@
 import { weatherAPI } from '../apis/weather';
 
-export const getWeather = () => {
+export const fetchWeather = (lat, lon) => {
   return async (dispatch) => {
-    const response = weatherAPI();
+    const response = await weatherAPI(lat, lon);
     dispatch({
       type: 'FETCH_WEATHER',
       payload: response,

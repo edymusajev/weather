@@ -1,7 +1,11 @@
 import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { fetchWeather } from '../actions';
 
-const Weather = () => {
-  useEffect(() => {}, []);
+const Weather = ({ fetchWeather }) => {
+  useEffect(() => {
+    fetchWeather(24, 33);
+  }, [fetchWeather]);
 
   return (
     <div>
@@ -10,4 +14,4 @@ const Weather = () => {
   );
 };
 
-export default Weather;
+export default connect(null, fetchWeather)(Weather);
