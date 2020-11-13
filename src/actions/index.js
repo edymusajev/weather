@@ -1,4 +1,5 @@
 import { weatherAPI } from '../apis/weather';
+import axios from 'axios';
 
 export const fetchWeather = (lat, lon) => {
   return async (dispatch) => {
