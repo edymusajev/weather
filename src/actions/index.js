@@ -1,4 +1,3 @@
-// import { weatherAPI } from '../apis/weather';
 import axios from 'axios';
 
 const API_KEY = '1271256593c8dcf1f9d4048d228181a2';
@@ -24,5 +23,12 @@ export const fetchLocation = (lat, lon) => {
       type: 'FETCH_LOCATION',
       payload: response.data,
     });
+  };
+};
+
+export const fetchWeatherAndLocation = (lat, lon) => {
+  return async (dispatch) => {
+    await dispatch(fetchWeather(lat, lon));
+    await dispatch(fetchLocation(lat, lon));
   };
 };

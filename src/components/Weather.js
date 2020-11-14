@@ -1,21 +1,20 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { fetchWeather, fetchLocation } from '../actions';
+import { fetchWeatherAndLocation } from '../actions';
 
 import SearchLocation from './SearchLocation';
 import CurrentWeather from './CurrentWeather';
 
-const Weather = ({ fetchLocation, fetchWeather, weather, location }) => {
+const Weather = ({ weather, location, fetchWeatherAndLocation }) => {
   useEffect(() => {
-    fetchWeather(35, 139);
-    fetchLocation(35, 139);
-  }, [fetchLocation, fetchWeather]);
+    fetchWeatherAndLocation(69, 57);
+  }, [fetchWeatherAndLocation]);
 
   const renderWeather = () => {
     if (Object.keys(weather).length !== 0 && Object.keys(location).length !== 0) {
       return <CurrentWeather />;
     } else {
-      return <div>loading</div>;
+      return <div>loading...</div>;
     }
   };
   return (
@@ -30,4 +29,4 @@ const mapStateToProps = (state) => {
   return { weather: state.weather, location: state.location };
 };
 
-export default connect(mapStateToProps, { fetchWeather, fetchLocation })(Weather);
+export default connect(mapStateToProps, { fetchWeatherAndLocation })(Weather);
