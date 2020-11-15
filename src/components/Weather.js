@@ -2,12 +2,16 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { fetchWeatherAndLocation } from '../actions';
 
+import Header from './Header';
 import SearchLocation from './SearchLocation';
 import CurrentWeather from './CurrentWeather';
 
+// TODO:
+// 1. handle fetch location error UI response
+
 const Weather = ({ weather, location, fetchWeatherAndLocation }) => {
   useEffect(() => {
-    fetchWeatherAndLocation(69, 57);
+    fetchWeatherAndLocation('Amsterdam');
   }, [fetchWeatherAndLocation]);
 
   const renderWeather = () => {
@@ -19,7 +23,7 @@ const Weather = ({ weather, location, fetchWeatherAndLocation }) => {
   };
   return (
     <div>
-      <SearchLocation />
+      <Header />
       {renderWeather()}
     </div>
   );

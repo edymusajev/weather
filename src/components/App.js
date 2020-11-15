@@ -1,9 +1,12 @@
 import React from 'react';
+
+// import '../style.css';
+
 import Weather from './Weather';
 
 const App = () => {
   return (
-    <div>
+    <div className="container">
       <Weather />
     </div>
   );
