@@ -9,7 +9,10 @@ const HourlyWeather = ({ hourly, temperature }) => {
         const time = index === 0 ? 'Now' : moment.unix(hour.dt).format('HH');
         return (
           <div className="d-flex flex-column col-2 align-items-center px-4 " key={hour.dt}>
-            <p style={time === 'Now' ? { fontWeight: 'bolder' } : { fontWeight: 'normal' }}>
+            <p
+              className="h-25"
+              style={time === 'Now' ? { fontWeight: 'bolder' } : { fontWeight: 'normal' }}
+            >
               {time}
             </p>
             <p className="text-primary">{hour.pop > 0 ? Math.round(hour.pop * 100) + '%' : ''}</p>

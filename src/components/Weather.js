@@ -27,10 +27,10 @@ const Weather = ({ weather, location, fetchWeatherAndLocation, tempScale }) => {
       return (
         <div className="mb-5">
           <div className="row justify-content-center align-items-center">
-            <div className="col-md-4 order-md-1">
+            <div className="col-md-4 order-md-1 container">
               <CurrentWeather temperature={temperature} />
             </div>
-            <div className="col-md-8 order-md-2">
+            <div className="col-md-8 order-md-2 container">
               <HourlyWeather temperature={temperature} />
             </div>
 
