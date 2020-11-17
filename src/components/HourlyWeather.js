@@ -19,7 +19,7 @@ const HourlyWeather = ({ hourly, temperature }) => {
             <figure>
               <img
                 className="img-fluid weather-img"
-                src={` http://openweathermap.org/img/wn/${hour.weather[0].icon}@4x.png`}
+                src={` https://openweathermap.org/img/wn/${hour.weather[0].icon}@4x.png`}
                 alt={hour.weather[0].description}
               />
             </figure>
