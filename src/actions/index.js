@@ -18,7 +18,7 @@ export const fetchWeather = (lat, lon) => {
 export const fetchLocation = (city) => {
   return async (dispatch, getState) => {
     await axios
-      .get(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`)
+      .get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`)
       .then((response) => {
         dispatch({
           type: 'FETCH_LOCATION',
