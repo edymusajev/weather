@@ -12,13 +12,16 @@ const Header = ({ tempScale, toggleTempScale }) => {
   };
   return (
     <nav className="navbar navbar-dark bg-dark row mb-4 pt-4 pb-4 text-center">
-      <img
-        className="img-fluid col-sm"
-        src="https://openweathermap.org/themes/openweathermap/assets/img/logo_white_cropped.png"
-        style={{ maxWidth: '100px', height: 'auto' }}
-        alt={'logo'}
-      />
-      <div className="col-sm">
+      <div className="col-sm-2 text-center">
+        <img
+          className="img-fluid "
+          src="https://openweathermap.org/themes/openweathermap/assets/img/logo_white_cropped.png"
+          style={{ maxWidth: '100px', height: 'auto' }}
+          alt={'logo'}
+        />
+      </div>
+
+      <div className="col-sm-8">
         <SearchLocation />
       </div>
       <div className="col-sm-2">

@@ -25,7 +25,7 @@ const Weather = ({ weather, location, fetchWeatherAndLocation, tempScale }) => {
   const renderWeather = () => {
     if (Object.keys(weather).length !== 0 && Object.keys(location).length !== 0) {
       return (
-        <div className="">
+        <div className="mb-5">
           <div className="row justify-content-center align-items-center">
             <div className="col-md-4 order-md-1">
               <CurrentWeather temperature={temperature} />
