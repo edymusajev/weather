@@ -1,12 +1,12 @@
 import React from 'react';
 
-// import '../style.css';
+import '../style.css';
 
 import Weather from './Weather';
 
 const App = () => {
   return (
-    <div className="container">
+    <div className="container-fluid">
       <Weather />
     </div>
   );

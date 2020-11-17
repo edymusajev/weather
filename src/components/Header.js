@@ -9,16 +9,25 @@ const Header = ({ tempScale, toggleTempScale }) => {
 
   const onToggleTempScale = () => {
     toggleTempScale();
-    console.log(tempScale);
   };
   return (
-    <div className="header">
-      <SearchLocation />
-      <button onClick={onToggleTempScale}>
-        <span style={{ fontWeight: celsiusFontWeight }}>°C</span> /{' '}
-        <span style={{ fontWeight: fahrenheitFontWeight }}>°F</span>
-      </button>
-    </div>
+    <nav className="navbar navbar-dark bg-dark row mb-4 pt-4 pb-4 text-center">
+      <img
+        className="img-fluid col-sm"
+        src="https://openweathermap.org/themes/openweathermap/assets/img/logo_white_cropped.png"
+        style={{ maxWidth: '100px', height: 'auto' }}
+        alt={'logo'}
+      />
+      <div className="col-sm">
+        <SearchLocation />
+      </div>
+      <div className="col-sm-2">
+        <button onClick={onToggleTempScale} type="button" className="btn btn-light w-100">
+          <span style={{ fontWeight: celsiusFontWeight }}>°C</span> /{' '}
+          <span style={{ fontWeight: fahrenheitFontWeight }}>°F</span>
+        </button>
+      </div>
+    </nav>
   );
 };
 

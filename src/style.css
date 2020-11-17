@@ -1,64 +1,27 @@
-body {
-  font-family: 'Open Sans', sans-serif;
-  margin: 0;
+.orange {
+  background-color: rgb(235, 111, 76);
+  border-color: rgb(235, 111, 76);
 }
-h1,
-h2,
-h3,
-h4,
-p {
-  margin: 0;
-  color: white;
-  font-weight: 300;
+.searchbar {
+  max-width: 600px;
 }
-.container {
-  background-color: grey;
-  margin: auto;
-}
-/* Header */
-.header {
-  height: 3em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.search-input {
-  box-sizing: border-box;
-  height: 2em;
-  width: 24em;
-  border-radius: 4px;
-  padding-left: 0.5em;
-  border: none;
-}
-.search-btn {
-  height: 2em;
-}
-/* Current Weather */
-.current-weather-container {
-  background-color: black;
-  display: flex;
-  flex-direction: column;
-  /* justify-content: center; */
-  align-items: center;
-  padding-top: 2em;
-  padding-bottom: 2em;
-}
-.max-min-temp-container {
-  display: flex;
-  flex-direction: row;
-}
-.location-name {
-  font-size: 1.75rem;
-  font-weight: 400;
-}
-.weather-short-description {
-  font-size: 1rem;
-}
-.current-temp {
-  font-size: 4rem;
-  margin-left: 0.25em;
+.toggle-deg-btn {
+  max-width: 400px;
 }
 
-.max-min-temp-container > * {
-  margin: 0.5em;
+@media (min-width: 768px) {
+  .weather-description {
+    border-bottom: none !important;
+  }
+}
+@media (max-width: 768px) {
+  .day-header {
+    border-bottom: none !important;
+  }
+}
+img {
+  height: 100%;
+}
+.weather-img {
+  max-width: 75px;
 }

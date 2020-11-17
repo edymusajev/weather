@@ -1,25 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { kelvinToCelsius, kelvinToFahrenheit } from '../helpers';
 
-const CurrentWeather = ({ weather, location, tempScale }) => {
-  const temperature = (temp) => {
-    return tempScale === 'celsius' ? kelvinToCelsius(temp) : kelvinToFahrenheit(temp);
-  };
+const CurrentWeather = ({ weather, location, temperature }) => {
   return (
-    <div className="current-weather-container">
-      <h1 className="location-name">{location.name}</h1>
+    <div className="d-flex flex-column align-items-center">
+      <h2 className="location-name">{location.name}</h2>
       <h4 className="weather-short-description">{weather.current.weather[0].main}</h4>
-      <h4 className="current-temp">{temperature(weather.current.temp)}</h4>
-      <div className="max-min-temp-container">
-        <p>H:{temperature(weather.daily[0].temp.max)}</p>
-        <p>L:{temperature(weather.daily[0].temp.min)}</p>
+      <h1 className="display-1 ml-3">{temperature(weather.current.temp)}</h1>
+      <div className="d-flex">
+        <p className="mx-1">H:{temperature(weather.daily[0].temp.max)}</p>
+        <p className="mx-1">L:{temperature(weather.daily[0].temp.min)}</p>
       </div>
     </div>
   );
 };
 const mapStateToProps = (state) => {
-  return { weather: state.weather, location: state.location, tempScale: state.tempScale };
+  return { weather: state.weather, location: state.location };
 };
 
 export default connect(mapStateToProps)(CurrentWeather);
