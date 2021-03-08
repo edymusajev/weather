@@ -1,4 +1,4 @@
-Live version: https://edehlol.github.io/weather/
+Live version: https://eager-hamilton-724cee.netlify.app/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
